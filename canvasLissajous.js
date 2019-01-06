@@ -38,8 +38,8 @@ Chris Isabelle, Khan Academy Student, circa 2015
 var x = 0;
 var y = 0;
 
-var scaleX = 400;
-var scaleY = 400;
+var scaleX = 100;
+var scaleY = 100;
 var offsetX = scaleX+100;
 var offsetY = scaleY+100;
 var phaseX = 0;
@@ -54,8 +54,8 @@ var iDegrees;
 
 function wait(ms){
    var start = new Date().getTime();
-   var end = start;
-   while(end < start + ms) {
+   var end = start + ms;
+   while(end < start) {
      end = new Date().getTime();
   }
 }
@@ -64,7 +64,7 @@ var twoPi = (Math.PI * 2);
 
 function animateLissaious()
 {
-	wait(40);
+	wait(00);
 	requestAnimationFrame(animateLissaious);
 	phaseX++;
 	{
@@ -74,8 +74,8 @@ function animateLissaious()
 		for(iDegrees = 0; iDegrees < traceDepthMax; iDegrees+=2)
 		{	
 			//define current point
-			traceArray[iDegrees] = scaleX * Math.sin((iDegrees * freqX + phaseX)/twoPi) + (offsetX);
-			traceArray[iDegrees+1] = scaleY * Math.sin((iDegrees * freqY + phaseY)/twoPi) + (offsetY);
+			traceArray[iDegrees] = ~~ (scaleX * Math.sin((iDegrees * freqX + phaseX)/twoPi) + (offsetX));
+			traceArray[iDegrees+1] = ~~ (scaleY * Math.sin((iDegrees * freqY + phaseY)/twoPi) + (offsetY));
 		}
 
 		//plot traceArray
