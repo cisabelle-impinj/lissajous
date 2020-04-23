@@ -40,14 +40,14 @@ Chris Isabelle, Khan Academy, circa 2015
 var x = 0;
 var y = 0;
 
-var scaleX = 400;
-var scaleY = 400;
-var offsetX = scaleX+100;
-var offsetY = scaleY+100;
+var scaleX = 75;
+var scaleY = 100;
+var offsetX = scaleX+50;
+var offsetY = scaleY+50;
 var phaseX = 0;
 var phaseY = 0;
-var freqX = 6;
-var freqY = 13;
+var freqX = 4;
+var freqY = 3;
 var scaleD = .056;
 
 // traceArray holds x and y points for one complete cycle
@@ -67,8 +67,8 @@ var twoPi = (Math.PI * 2);
 
 function animateLissaious()
 {
-	phaseY+=.2;
-	wait(100);
+	phaseY+=.1;
+	wait(50);
 	requestAnimationFrame(animateLissaious);
 	{
 		c.clearRect(0, 0, offsetX*2, offsetY*2);
