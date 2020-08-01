@@ -1,5 +1,6 @@
-var canvas = document.querySelector('canvas')
-	;
+/* https://github.com/stillChris/lissajous */
+
+var canvas = document.querySelector('canvas');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -77,8 +78,8 @@ function animateLissaious()
 		for(iDegrees = 0; iDegrees < traceDepthMax; iDegrees+=2)
 		{	
 			//define current point
-			traceArray[iDegrees] = scaleX * Math.cos((scaleD * iDegrees * freqX + phaseX)/twoPi) + (offsetX);
-			traceArray[iDegrees+1] = scaleY * Math.sin((scaleD * iDegrees * freqY + phaseY)/twoPi) + (offsetY);
+			traceArray[iDegrees] = scaleX * Math.cos(((scaleD * iDegrees * freqX) + phaseX)/twoPi) + (offsetX);
+			traceArray[iDegrees+1] = scaleY * Math.sin(((scaleD * iDegrees * freqY) + phaseY)/twoPi) + (offsetY);
 		}
 
 		//plot traceArray
